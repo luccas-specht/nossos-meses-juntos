@@ -1,0 +1,14 @@
+.toggleButtonRoot {
+  font-size: 0.875rem; /* text-sm */
+  font-weight: bold;
+  padding: 8px 16px; /* px-4 py-2 */
+  border-radius: 999px; /* rounded-full */
+  text-transform: capitalize; /* Apenas primeira letra maiúscula */
+  background-color: #eeeeee; /* Fundo padrão */
+  color: #a6b6cc; /* Cor do texto padrão */
+}
+
+.toggleButtonSelected {
+  background-color: #ff4e6d !important; /* Fundo ao ser selecionado */
+  color: #ffffff !important; /* Texto ao ser selecionado */
+}

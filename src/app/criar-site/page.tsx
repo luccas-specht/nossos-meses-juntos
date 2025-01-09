@@ -1,3 +1,5 @@
-export default function Home() {
-  return <h1>Luccas loving Natalie. Aham</h1>;
+import { CreateSitePageTemplate } from '@/templates/index';
+
+export default function CreateSite() {
+  return <CreateSitePageTemplate />;
 }
