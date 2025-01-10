@@ -4,10 +4,17 @@ import { useState } from 'react';
 import Image from 'next/image';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
+import { SelectChangeEvent } from '@mui/material/Select';
+import { TextField, Select, MenuItem, FormControl } from '@mui/material';
 import styles from './styles.module.css';
 
 export const CreateSitePageTemplate = () => {
   const [plan, setPlan] = useState('much');
+  const [month, setMonth] = useState('');
+
+  const handleChangeSelect = (event: SelectChangeEvent) => {
+    setMonth(event.target.value as string);
+  };
 
   const handleChange = (
     event: React.MouseEvent<HTMLElement>,
@@ -84,6 +91,105 @@ export const CreateSitePageTemplate = () => {
             />
           </ToggleButton>
         </ToggleButtonGroup>
+      </section>
+      <section>
+        <div className="mt-4 flex w-full gap-4">
+          <TextField
+            size="small"
+            label="Nome do casal*"
+            placeholder="Exemplo: Miguel e Helena (Não use emoji)"
+            variant="outlined"
+            sx={{
+              width: '300px',
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#FF4E96',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#FF4E96',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#FF4E96',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                color: '#828282',
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: '#828282',
+              },
+            }}
+          />
+          <TextField
+            size="small"
+            label="Link do YouTube da música do casal"
+            placeholder="Exemplo: https://www.youtube.com/watch?v=SEC..."
+            variant="outlined"
+            sx={{
+              width: '300px',
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#FF4E96',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#FF4E96',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#FF4E96',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                color: '#828282',
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: '#828282',
+              },
+            }}
+          />
+          <FormControl
+            size="small"
+            sx={{
+              width: '145px',
+              '& .MuiOutlinedInput-root': {
+                '& fieldset': {
+                  borderColor: '#FF4E96',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#FF4E96',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#FF4E96',
+                },
+              },
+            }}
+          >
+            <Select
+              id="select-month"
+              value={month}
+              onChange={handleChangeSelect}
+              displayEmpty
+              sx={{
+                '& .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#FF4E96',
+                },
+                '&:hover .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#FF4E96',
+                },
+                '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
+                  borderColor: '#FF4E96',
+                },
+                color: '#828282',
+              }}
+            >
+              <MenuItem value="">Meses juntos</MenuItem>
+              {Array.from({ length: 12 }, (_, index) => (
+                <MenuItem key={index + 1} value={`${index + 1}`}>
+                  {index + 1} {index + 1 === 1 ? 'mês' : 'meses'}
+                </MenuItem>
+              ))}
+            </Select>
+          </FormControl>
+        </div>
       </section>
     </div>
   );
