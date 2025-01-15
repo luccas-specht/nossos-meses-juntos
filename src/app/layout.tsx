@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Roboto } from 'next/font/google';
 import '../styles/globals.css';
+import 'react-device-frameset/styles/marvel-devices.min.css';
 
 const roboto = Roboto({
   variable: '--font-roboto',

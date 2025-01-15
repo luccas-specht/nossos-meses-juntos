@@ -12,3 +12,11 @@
   background-color: #ff4e6d !important; /* Fundo ao ser selecionado */
   color: #ffffff !important; /* Texto ao ser selecionado */
 }
+
+.imageBoxes {
+  border: 2px dashed #ff4e6d;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
