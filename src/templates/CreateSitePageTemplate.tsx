@@ -46,7 +46,7 @@ export const CreateSitePageTemplate = () => {
           <h1 className="text-6xl font-bold mb-4">Quase lá!</h1>
           <div className="text-base text-[#2f2d5a] font-semibold">
             Preencha os campos abaixo para criar seu site personalizado e
-            reviver cada momento especial desses meses vividos juntos&nbsp;
+            reviver cada momento especial&nbsp;
             <span className="inline-block align-middle">
               <Image
                 src="/assets/icons/loving.svg"
@@ -109,6 +109,7 @@ export const CreateSitePageTemplate = () => {
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
+        <div>opa</div>
         <div>
           <div className="mt-5 flex w-full gap-4">
             <TextField
