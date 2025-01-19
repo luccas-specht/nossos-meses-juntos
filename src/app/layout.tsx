@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Roboto } from 'next/font/google';
+import { Roboto, Playfair } from 'next/font/google';
 import '../styles/globals.css';
 import 'react-device-frameset/styles/marvel-devices.min.css';
 
@@ -7,6 +7,13 @@ const roboto = Roboto({
   variable: '--font-roboto',
   subsets: ['latin'],
   weight: ['100', '300', '400', '500', '700', '900'],
+  style: ['normal'],
+});
+
+const playfair = Playfair({
+  variable: '--font-playfair',
+  subsets: ['latin'],
+  weight: ['400', '500', '700', '900'],
   style: ['normal'],
 });
 
@@ -22,7 +29,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>{children}</body>
+      <body className={`${roboto.variable} ${playfair.variable} antialiased`}>
+        {children}
+      </body>
     </html>
   );
 }

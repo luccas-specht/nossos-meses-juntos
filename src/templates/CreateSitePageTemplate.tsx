@@ -5,18 +5,10 @@ import Image from 'next/image';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { SelectChangeEvent } from '@mui/material/Select';
-import {
-  TextField,
-  Select,
-  MenuItem,
-  FormControl,
-  Box,
-  Button,
-  Typography,
-} from '@mui/material';
+import { TextField, Select, MenuItem, FormControl } from '@mui/material';
 import styles from './styles.module.css';
-import ImageIcon from '@mui/icons-material/Image';
 import { DeviceFrameset } from 'react-device-frameset';
+import { EditablePreviewTemplate } from './EditablePreviewTemplaye';
 
 export const CreateSitePageTemplate = () => {
   const [plan, setPlan] = useState('much');
@@ -50,9 +42,9 @@ export const CreateSitePageTemplate = () => {
   return (
     <div className="flex-col w-full h-full">
       <div className="flex flex-col w-full h-full ">
-        <section className="w-[530px] mb-10">
+        <div className="mb-10">
           <h1 className="text-6xl font-bold mb-4">Quase lá!</h1>
-          <div className="text-lg">
+          <div className="text-base text-[#2f2d5a] font-semibold">
             Preencha os campos abaixo para criar seu site personalizado e
             reviver cada momento especial desses meses vividos juntos&nbsp;
             <span className="inline-block align-middle">
@@ -64,11 +56,11 @@ export const CreateSitePageTemplate = () => {
               />
             </span>
           </div>
-        </section>
-        <section>
+        </div>
+        <div>
           <label
             htmlFor="to-select-plan"
-            className="text-base font-semibold text-gray-primary"
+            className="text-base font-medium text-gray-primary"
           >
             Plano selecionado
           </label>
@@ -116,8 +108,8 @@ export const CreateSitePageTemplate = () => {
               />
             </ToggleButton>
           </ToggleButtonGroup>
-        </section>
-        <section>
+        </div>
+        <div>
           <div className="mt-5 flex w-full gap-4">
             <TextField
               size="small"
@@ -215,11 +207,11 @@ export const CreateSitePageTemplate = () => {
               </Select>
             </FormControl>
           </div>
-        </section>
-        <section>
-          <section className="w-[530px] mb-10">
-            <div className="text-lg">
-              Adicione os seus melhores momentos, enquanto você tem um spoiler
+        </div>
+        <div>
+          <div className="mb-10 mt-10">
+            <div className="text-base text-[#2f2d5a] font-semibold">
+              Adicione suas melhores recordações, enquanto você tem um spoiler
               de como vai ficar seu site
               <span className="inline-block align-middle">
                 <Image
@@ -230,18 +222,13 @@ export const CreateSitePageTemplate = () => {
                 />
               </span>
             </div>
-          </section>
-          <div className={styles.imageBoxes}>
-            <DeviceFrameset
-              device="iPhone 8"
-              color="black"
-              width={310}
-              height={550}
-            >
-              <div>Hello world</div>
-            </DeviceFrameset>
           </div>
-        </section>
+          {/** <div>
+            <DeviceFrameset device="iPhone X" color="black">
+              <EditablePreviewTemplate />
+            </DeviceFrameset>
+          </div> */}
+        </div>
       </div>
     </div>
   );

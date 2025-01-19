@@ -6,7 +6,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['Roboto', 'sans-serif'],
+        sans: ['var(--font-roboto)', 'sans-serif'],
+        playfair: ['var(--font-playfair)', 'sans-serif'],
       },
       colors: {
         'black-primary': '#363636',
