@@ -13,20 +13,6 @@ import { EditablePreviewTemplate } from './EditablePreviewTemplaye';
 export const CreateSitePageTemplate = () => {
   const [plan, setPlan] = useState('much');
   const [month, setMonth] = useState('');
-  const [image, setImage] = useState<File | null>(null);
-
-  const [preview, setPreview] = useState<string | null>(null);
-
-  const handleImageChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0] || null;
-    setImage(file);
-    if (file) {
-      const previewURL = URL.createObjectURL(file);
-      setPreview(previewURL);
-    } else {
-      setPreview(null);
-    }
-  };
 
   const handleChangeSelect = (event: SelectChangeEvent) => {
     setMonth(event.target.value as string);
@@ -44,7 +30,7 @@ export const CreateSitePageTemplate = () => {
       <div className="flex flex-col w-full h-full ">
         <div className="mb-10">
           <h1 className="text-6xl font-bold mb-4">Quase lá!</h1>
-          <div className="text-base text-[#2f2d5a] font-semibold">
+          <div className="text-lg text-[#2f2d5a] font-semibold">
             Preencha os campos abaixo para criar seu site personalizado e
             reviver cada momento especial&nbsp;
             <span className="inline-block align-middle">
@@ -62,7 +48,7 @@ export const CreateSitePageTemplate = () => {
             htmlFor="to-select-plan"
             className="text-base font-medium text-gray-primary"
           >
-            Plano selecionado
+            Selecione o seu plano
           </label>
           <ToggleButtonGroup
             id="to-select-plan"
@@ -75,7 +61,7 @@ export const CreateSitePageTemplate = () => {
             <ToggleButton
               value="much"
               selected={plan === 'much'}
-              className="px-4 py-2 w-[160px]"
+              className="px-3 py-2 max-w-[180px] w-full"
               classes={{
                 root: styles.toggleButtonRoot,
                 selected: styles.toggleButtonSelected,
@@ -91,9 +77,9 @@ export const CreateSitePageTemplate = () => {
             </ToggleButton>
 
             <ToggleButton
-              value="lower"
-              selected={plan === 'lower'}
-              className="px-4 py-2 w-[160px]"
+              value="poor"
+              selected={plan === 'poor'}
+              className="px-3 py-2 max-w-[180px] w-full"
               classes={{
                 root: styles.toggleButtonRoot,
                 selected: styles.toggleButtonSelected,
@@ -109,8 +95,90 @@ export const CreateSitePageTemplate = () => {
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
-        <div>opa</div>
-        <div>
+        <div className="w-full flex gap-3 h-max mt-5">
+          <div
+            className={`w-full max-w-fit bg-white rounded-md border-2 border-solid border-[#FF4E96] ${
+              plan === 'much'
+                ? 'border-2 shadow-[0_0px_12px_#ff4e6d]'
+                : 'bg-[#eeeeee]'
+            }`}
+          >
+            <div className="flex-col w-full max-w-[300px] max-h-max">
+              <span className="rounded-tl-[4px] rounded-tr-[4px] bg-[#FF4E96] w-full h-4 p-3 pb-8 block text-white font-bold text-center">
+                Recomendado
+              </span>
+              <div className="w-full px-5 pt-3 text-xl text-[#1f2044] font-bold">
+                Plano Muito Amor
+              </div>
+              <div className="w-full px-5 pt-5 text-[#2E93EE]">
+                <span>R$</span>
+                <span className="text-5xl font-bold">15,99</span>
+              </div>
+              <ul className="p-5 text-[#363636]">
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/check.svg"
+                    alt="check"
+                    width={16}
+                    height={16}
+                  />
+                  <span>
+                    Você <strong>paga uma vez na vida</strong>
+                  </span>
+                </li>
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/check.svg"
+                    alt="check"
+                    width={14}
+                    height={14}
+                  />
+                  <span>
+                    Disponível <strong>para sempre</strong>
+                  </span>
+                </li>
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/check.svg"
+                    alt="check"
+                    width={14}
+                    height={14}
+                  />
+                  <span>
+                    Até <strong>12 fotos</strong>
+                  </span>
+                </li>
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/check.svg"
+                    alt="check"
+                    width={14}
+                    height={14}
+                  />
+                  <span>
+                    Disponível com <strong>a música do casal</strong>
+                  </span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            className={`w-full max-w-fit p-6 bg-white rounded-md border-1 border-solid border-[#FF4E96] ${
+              plan === 'poor'
+                ? 'border-2 shadow-[0_0px_6px_#ff4e6d]'
+                : 'bg-[#eeeeee]'
+            }`}
+          >
+            pouco
+          </div>
+        </div>
+        {/**
+        * 
+        *  <div>
           <div className="mt-5 flex w-full gap-4">
             <TextField
               size="small"
@@ -209,6 +277,8 @@ export const CreateSitePageTemplate = () => {
             </FormControl>
           </div>
         </div>
+        
+        
         <div>
           <div className="mb-10 mt-10">
             <div className="text-base text-[#2f2d5a] font-semibold">
@@ -224,12 +294,12 @@ export const CreateSitePageTemplate = () => {
               </span>
             </div>
           </div>
-          {/** <div>
+           <div>
             <DeviceFrameset device="iPhone X" color="black">
               <EditablePreviewTemplate />
             </DeviceFrameset>
-          </div> */}
-        </div>
+          </div> 
+        </div>*/}
       </div>
     </div>
   );

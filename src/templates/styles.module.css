@@ -9,8 +9,9 @@
 }
 
 .toggleButtonSelected {
-  background-color: #ff4e6d !important; /* Fundo ao ser selecionado */
-  color: #ffffff !important; /* Texto ao ser selecionado */
+  background-color: #ff4e6d !important;
+  color: #ffffff !important;
+  box-shadow: 0 0px 12px #ff4e6d;
 }
 
 .imageBoxes {
