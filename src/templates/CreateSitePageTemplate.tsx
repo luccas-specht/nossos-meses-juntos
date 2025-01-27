@@ -48,7 +48,7 @@ export const CreateSitePageTemplate = () => {
             htmlFor="to-select-plan"
             className="text-base font-medium text-gray-primary"
           >
-            Selecione o seu plano
+            Plano selecionado
           </label>
           <ToggleButtonGroup
             id="to-select-plan"
@@ -95,16 +95,16 @@ export const CreateSitePageTemplate = () => {
             </ToggleButton>
           </ToggleButtonGroup>
         </div>
-        <div className="w-full flex gap-3 h-max mt-5">
+        <div className="w-full min-[530px]:flex gap-3 h-max mt-5 items-center md:justify-center max-[530px]:flex-col max-[530px]:justify-center max-[530px]:items-center ">
           <div
-            className={`w-full max-w-fit bg-white rounded-md border-2 border-solid border-[#FF4E96] ${
+            className={`w-full max-w-fit bg-white rounded-md border-2 border-solid bg-[##eeeeee] ${
               plan === 'much'
-                ? 'border-2 shadow-[0_0px_12px_#ff4e6d]'
+                ? ' border-[#ff4e6d] border-2 shadow-[0_0px_12px_#ff4e6d]'
                 : 'bg-[#eeeeee]'
             }`}
           >
             <div className="flex-col w-full max-w-[300px] max-h-max">
-              <span className="rounded-tl-[4px] rounded-tr-[4px] bg-[#FF4E96] w-full h-4 p-3 pb-8 block text-white font-bold text-center">
+              <span className="rounded-tl-[4px] rounded-tr-[4px] bg-[#ff4e6d] w-full h-4 p-3 pb-8 block text-white font-bold text-center">
                 Recomendado
               </span>
               <div className="w-full px-5 pt-3 text-xl text-[#1f2044] font-bold">
@@ -112,7 +112,7 @@ export const CreateSitePageTemplate = () => {
               </div>
               <div className="w-full px-5 pt-5 text-[#2E93EE]">
                 <span>R$</span>
-                <span className="text-5xl font-bold">15,99</span>
+                <span className="text-5xl font-bold">29,90</span>
               </div>
               <ul className="p-5 text-[#363636]">
                 <li className="py-1 flex">
@@ -120,8 +120,8 @@ export const CreateSitePageTemplate = () => {
                     className="mr-1"
                     src="/assets/icons/check.svg"
                     alt="check"
-                    width={16}
-                    height={16}
+                    width={14}
+                    height={14}
                   />
                   <span>
                     Você <strong>paga uma vez na vida</strong>
@@ -167,13 +167,71 @@ export const CreateSitePageTemplate = () => {
             </div>
           </div>
           <div
-            className={`w-full max-w-fit p-6 bg-white rounded-md border-1 border-solid border-[#FF4E96] ${
+            className={`w-full max-w-fit bg-white rounded-md border-2 border-solid bg-[##eeeeee] max-h-[280px] flex flex-col ${
               plan === 'poor'
-                ? 'border-2 shadow-[0_0px_6px_#ff4e6d]'
+                ? ' border-[#ff4e6d] border-2 shadow-[0_0px_12px_#ff4e6d]'
                 : 'bg-[#eeeeee]'
             }`}
           >
-            pouco
+            <div className="flex-col w-full flex py-5">
+              <div className="w-full px-5 text-xl text-[#1f2044] font-bold ">
+                Plano Pouco Amor
+              </div>
+              <div className="w-full px-5 pt-5 text-[#2E93EE]">
+                <span>R$</span>
+                <span className="text-5xl font-bold">24,90</span>
+              </div>
+              <ul className="p-5 text-[#363636]">
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/warning-feature-plan.svg"
+                    alt="check"
+                    width={14}
+                    height={14}
+                  />
+                  <span>
+                    Pagamento <strong>anual</strong>
+                  </span>
+                </li>
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/warning-feature-plan.svg"
+                    alt="check"
+                    width={14}
+                    height={14}
+                  />
+                  <span>
+                    Disponível <strong>por 1 ano</strong>
+                  </span>
+                </li>
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/check.svg"
+                    alt="check"
+                    width={14}
+                    height={14}
+                  />
+                  <span>
+                    Até <strong>12 fotos</strong>
+                  </span>
+                </li>
+                <li className="py-1 flex">
+                  <Image
+                    className="mr-1"
+                    src="/assets/icons/not-include.svg"
+                    alt="check"
+                    width={14}
+                    height={14}
+                  />
+                  <span>
+                    <strong>sem a música do casal</strong>
+                  </span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
         {/**
@@ -189,13 +247,13 @@ export const CreateSitePageTemplate = () => {
                 width: '300px',
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&:hover fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                 },
                 '& .MuiInputLabel-root': {
@@ -215,13 +273,13 @@ export const CreateSitePageTemplate = () => {
                 width: '300px',
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&:hover fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                 },
                 '& .MuiInputLabel-root': {
@@ -238,13 +296,13 @@ export const CreateSitePageTemplate = () => {
                 width: '145px',
                 '& .MuiOutlinedInput-root': {
                   '& fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&:hover fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&.Mui-focused fieldset': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                 },
               }}
@@ -256,13 +314,13 @@ export const CreateSitePageTemplate = () => {
                 displayEmpty
                 sx={{
                   '& .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&:hover .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   '&.Mui-focused .MuiOutlinedInput-notchedOutline': {
-                    borderColor: '#FF4E96',
+                    borderColor: '#ff4e6d',
                   },
                   color: '#828282',
                 }}
